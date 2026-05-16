@@ -300,7 +300,7 @@ function HeroSection() {
 }
 
 // Trust Bar Component
-export function TrustBar() {
+function TrustBar() {
   return (
     <div className="py-12 bg-navy/50 border-y border-white/5">
       <div className="max-w-7xl mx-auto px-4">
@@ -569,8 +569,7 @@ function FinalCTA() {
   );
 }
 
-// Re-export marketing Navbar for backward compatibility
-export { Navbar as Navbar } from "@/components/marketing/Navbar";
+
 
 // Main Page Component
 export default function HomePage() {

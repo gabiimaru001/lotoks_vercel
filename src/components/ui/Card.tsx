@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, HTMLMotionProps } from 'framer-motion';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 type CardVariant = 'glass' | 'elevated' | 'image' | 'stat' | 'process-step';
 
@@ -90,7 +90,7 @@ export function ElevatedCard({
 // Image Card - With background image and overlay
 interface ImageCardProps extends CardProps {
   variant?: 'image';
-  imageUrl: string;
+  imageUrl?: string;
   overlay?: boolean;
 }
 
@@ -117,7 +117,7 @@ export function ImageCard({
     >
       <div 
         className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-        style={{ backgroundImage: `url(${imageUrl})` }}
+        style={imageUrl ? { backgroundImage: `url(${imageUrl})` } : undefined}
       />
       {overlay && (
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-transparent" />
@@ -138,8 +138,7 @@ type StatCardProps = {
   suffix?: string;
   hoverable?: boolean;
   className?: string;
-  style?: React.CSSProperties;
-} & Omit<React.HTMLAttributes<HTMLDivElement>, 'children'>;
+} & Omit<HTMLMotionProps<'div'>, 'children'>;
 
 export function StatCard({ 
   children, 
@@ -235,10 +234,6 @@ export function Card({
       return <ElevatedCard variant="elevated" hoverable={hoverable} className={className} {...props}>{children}</ElevatedCard>;
     case 'image':
       return <ImageCard variant="image" hoverable={hoverable} className={className} {...props}>{children}</ImageCard>;
-    case 'stat':
-      return <StatCard variant="stat" hoverable={hoverable} className={className} {...props}>{children}</StatCard>;
-    case 'process-step':
-      return <ProcessStepCard variant="process-step" hoverable={hoverable} className={className} {...props}>{children}</ProcessStepCard>;
     default:
       return <GlassCard variant="glass" hoverable={hoverable} className={className} {...props}>{children}</GlassCard>;
   }

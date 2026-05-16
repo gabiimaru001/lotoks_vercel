@@ -33,7 +33,7 @@ function cn(...inputs: ClassValue[]) {
 
 interface SidebarLinkProps {
   href: string;
-  icon: React.ComponentType<{ size?: number; className?: string }>;
+  icon: React.ElementType;
   label: string;
   active?: boolean;
 }

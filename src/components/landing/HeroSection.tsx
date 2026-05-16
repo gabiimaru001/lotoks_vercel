@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 interface HeroSectionProps {
-  videoRef: React.RefObject<HTMLVideoElement | null>;
+  videoRef: React.RefObject<HTMLVideoElement>;
   onSentinelChange: (isIntersecting: boolean) => void;
 }
 

@@ -14,7 +14,7 @@ import {
   HelpCircle,
   MoreVertical
 } from "lucide-react";
-import { StatusBadge } from "@/app/dashboard/page";
+import { StatusBadge } from "@/components/ui/StatusBadge";
 
 const queue = [
   { id: "LTK-2026-00001", name: "Amina Okafor", country: "Nigeria", type: "Visa + Job", date: "08 May", status: "under_review" },

@@ -11,7 +11,7 @@ import {
   ArrowUpRight,
   ChevronDown
 } from "lucide-react";
-import { Navbar, TrustBar } from "@/app/page";
+import { Navbar } from "@/components/marketing/Navbar";
 
 const listings = [
   {
