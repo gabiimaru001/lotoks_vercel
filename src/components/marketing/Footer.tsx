@@ -81,7 +81,7 @@ export function Footer() {
               {/* Phone removed per user request */}
               <div className="flex items-center gap-3 text-white/70">
                 <MapPin className="w-5 h-5 text-gold" />
-                <span>123 Global Avenue, New York, NY</span>
+                <span>Global HQ, Johannesburg, South Africa</span>
               </div>
             </div>
           </div>

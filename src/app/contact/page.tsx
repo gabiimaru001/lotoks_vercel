@@ -40,8 +40,8 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
-    value: "123 Global Avenue",
-    description: "New York, NY 10001, USA",
+    value: "Global HQ",
+    description: "Johannesburg, South Africa",
     href: null
   },
 ];

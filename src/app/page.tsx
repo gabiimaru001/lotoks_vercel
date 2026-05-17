@@ -120,30 +120,29 @@ const testimonialsPreview = [
 
 // Stats for the homepage
 const stats = [
-  { number: "50K+", label: "Applications Processed" },
-  { number: "98%", label: "Success Rate" },
-  { number: "150+", label: "Partner Countries" },
-  { number: "24h", label: "Average Processing" },
+  { number: 50000, suffix: "+", label: "Applications Processed" },
+  { number: 98, suffix: "%", label: "Success Rate" },
+  { number: 45, suffix: "+", label: "Partner Countries" },
+  { number: 14, suffix: " Days", label: "Average Processing" },
 ];
 
 // Animated counter component
-function AnimatedCounter({ target, suffix = "" }: { target: string; suffix?: string }) {
+function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   
   useEffect(() => {
     if (isInView) {
-      const numericTarget = parseInt(target.replace(/[^0-9]/g, ""));
       const duration = 2000;
       const steps = 60;
-      const increment = numericTarget / steps;
+      const increment = target / steps;
       let current = 0;
       
       const timer = setInterval(() => {
         current += increment;
-        if (current >= numericTarget) {
-          setCount(numericTarget);
+        if (current >= target) {
+          setCount(target);
           clearInterval(timer);
         } else {
           setCount(Math.floor(current));
@@ -156,7 +155,7 @@ function AnimatedCounter({ target, suffix = "" }: { target: string; suffix?: str
   
   return (
     <span ref={ref}>
-      {count}
+      {count.toLocaleString()}
       {suffix}
     </span>
   );
@@ -518,7 +517,7 @@ function StatsSection() {
               transition={{ delay: index * 0.1 }}
             >
               <StatCard 
-                number={<AnimatedCounter target={stat.number} />}
+                number={<AnimatedCounter target={stat.number as number} suffix={stat.suffix} />}
                 label={stat.label}
                 className="bg-white"
               />
