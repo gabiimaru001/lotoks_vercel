@@ -220,6 +220,7 @@ function FeaturedSection() {
       <SectionHeading 
         title="Success Stories"
         subtitle="Real experiences from real people who transformed their lives"
+        light
       />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -401,8 +402,16 @@ export default function TestimonialsPage() {
       
       {/* Hero */}
       <section className="relative min-h-[40vh] flex items-center justify-center pt-24 pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-navy" />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/60 to-navy" />
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src="/images/Testimonials.png" 
+            alt="Testimonials Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-navy/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/40 to-navy" />
+        </div>
         
         {/* Decorative globe pattern */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/5 rounded-full" />

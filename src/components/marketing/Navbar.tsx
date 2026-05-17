@@ -244,19 +244,35 @@ interface PageHeroProps {
   subtitle?: string;
   children?: React.ReactNode;
   align?: 'center' | 'left';
+  backgroundImage?: string;
 }
 
 export function PageHero({ 
   title, 
   subtitle, 
   children,
-  align = 'center' 
+  align = 'center',
+  backgroundImage
 }: PageHeroProps) {
   return (
     <section className="relative min-h-[50vh] flex items-center justify-center pt-24 pb-16 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-navy" />
-      <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/60 to-navy" />
+      {backgroundImage ? (
+        <div className="absolute inset-0">
+          <img 
+            src={backgroundImage} 
+            alt={title} 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-navy/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/40 to-navy" />
+        </div>
+      ) : (
+        <>
+          <div className="absolute inset-0 bg-navy" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/60 to-navy" />
+        </>
+      )}
       
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-gold/5 rounded-full blur-3xl" />
@@ -320,18 +336,19 @@ interface SectionHeadingProps {
   title: string;
   subtitle?: string;
   align?: 'center' | 'left';
+  light?: boolean;
 }
 
-export function SectionHeading({ title, subtitle, align = 'center' }: SectionHeadingProps) {
+export function SectionHeading({ title, subtitle, align = 'center', light = false }: SectionHeadingProps) {
   const alignment = align === 'center' ? 'text-center' : 'text-left';
   
   return (
     <div className={`mb-12 ${alignment}`}>
-      <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-4">
+      <h2 className={`text-3xl md:text-4xl font-heading font-bold mb-4 ${light ? 'text-white' : 'text-navy'}`}>
         {title}
       </h2>
       {subtitle && (
-        <p className="text-lg text-navy/70 max-w-2xl mx-auto">
+        <p className={`text-lg max-w-2xl mx-auto ${light ? 'text-white/70' : 'text-navy/70'}`}>
           {subtitle}
         </p>
       )}

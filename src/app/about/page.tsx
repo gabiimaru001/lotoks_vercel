@@ -378,6 +378,7 @@ export default function AboutPage() {
       <PageHero 
         title="About Us"
         subtitle="Empowering global mobility through innovation and trust"
+        backgroundImage="/images/Aboutus-background.png"
       />
 
       <MissionSection />

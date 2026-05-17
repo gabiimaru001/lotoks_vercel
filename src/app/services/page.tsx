@@ -36,7 +36,7 @@ const services = {
     title: "Visa Sponsorship",
     subtitle: "Work, study, and travel visas with verified sponsors",
     description: "Our visa sponsorship program connects you with verified employers and organizations willing to sponsor your visa application. We streamline the entire process, making it seamless and stress-free.",
-    image: "https://images.unsplash.com/photo-1569974507005-6dc61f97fb5c?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1544016713-3a42a7caa294?w=800&h=600&fit=crop",
     benefits: [
       "Verified sponsor network across 50+ countries",
       "Dedicated case manager for personalized support",
@@ -57,7 +57,7 @@ const services = {
     title: "Education Scholarships",
     subtitle: "Full and partial scholarships at top universities worldwide",
     description: "Access world-class education with our comprehensive scholarship matching service. We partner with universities and organizations to bring you funded opportunities that match your profile.",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=600&fit=crop",
     benefits: [
       "Access to 1000+ scholarship programs",
       "Full and partial funding options",
@@ -78,7 +78,7 @@ const services = {
     title: "Job Placements",
     subtitle: "Connect with employers offering sponsorship packages",
     description: "Find your dream job with companies willing to sponsor your work visa. Our job matching algorithm pairs you with opportunities that align with your skills and career goals.",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop",
     benefits: [
       "Exclusive job listings with sponsorship",
       "Direct hiring from top employers",
@@ -99,7 +99,7 @@ const services = {
     title: "Permanent Residence",
     subtitle: "Pathways to citizenship through investment and work",
     description: "Our residence and citizenship by investment programs help you obtain permanent residency or citizenship in your desired country through legitimate pathways.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
     benefits: [
       "Multiple pathway options available",
       "Investment-based citizenship programs",
@@ -145,12 +145,12 @@ const faqs = [
 // FAQ Accordion Component
 function FAQItem({ question, answer, isOpen, onToggle }: { question: string; answer: string; isOpen: boolean; onToggle: () => void }) {
   return (
-    <div className="border-b border-navy/10">
+    <div className="border-b border-white/10">
       <button
         onClick={onToggle}
         className="w-full py-5 flex items-center justify-between text-left"
       >
-        <span className="text-lg font-medium text-navy pr-8">{question}</span>
+        <span className="text-lg font-medium text-white pr-8">{question}</span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
@@ -167,7 +167,7 @@ function FAQItem({ question, answer, isOpen, onToggle }: { question: string; ans
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="pb-5 text-navy/70">
+            <div className="pb-5 text-white/70">
               {answer}
             </div>
           </motion.div>
@@ -325,6 +325,7 @@ function FAQSection() {
       <SectionHeading 
         title="Frequently Asked Questions"
         subtitle="Find answers to common questions about our services"
+        light
       />
 
       <div className="max-w-3xl mx-auto">
@@ -385,8 +386,16 @@ export default function ServicesPage() {
       
       {/* Hero */}
       <section className="relative min-h-[40vh] flex items-center justify-center pt-24 pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-navy" />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/60 to-navy" />
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src="/images/Ourservices-.png" 
+            alt="Our Services Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-navy/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/40 to-navy" />
+        </div>
         
         <div className="absolute top-20 left-10 w-72 h-72 bg-gold/5 rounded-full blur-3xl" />
         <div className="absolute bottom-10 right-10 w-96 h-96 bg-gold/10 rounded-full blur-3xl" />
