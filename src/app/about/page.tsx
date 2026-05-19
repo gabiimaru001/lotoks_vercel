@@ -78,25 +78,25 @@ const team = [
   {
     name: "David Mitchell",
     role: "CEO & Founder",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop",
+    image: "/images/unsplash/1560250097-0b93528c311a-400x400.jpg",
     bio: "Former immigration lawyer with 15+ years of experience in global mobility.",
   },
   {
     name: "Sarah Chen",
     role: "Chief Operations Officer",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
+    image: "/images/unsplash/1573496359142-b8d87734a5a2-400x400.jpg",
     bio: "Expert in scaling tech platforms and managing global operations.",
   },
   {
     name: "Marcus Johnson",
     role: "Head of Partnerships",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+    image: "/images/unsplash/1472099645785-5658abf4ff4e-400x400.jpg",
     bio: "Built partnerships with 500+ organizations across 40 countries.",
   },
   {
     name: "Elena Rodriguez",
     role: "Chief Technology Officer",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
+    image: "/images/unsplash/1580489944761-15a19d654956-400x400.jpg",
     bio: "Led engineering teams at top tech companies, now revolutionizing mobility.",
   },
 ];
@@ -227,7 +227,7 @@ function MissionSection() {
         >
           <div className="aspect-square rounded-3xl overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=800&fit=crop"
+              src="/images/unsplash/1522071820081-009f0129c71c-800x800.jpg"
               alt="Our team"
               className="w-full h-full object-cover"
             />

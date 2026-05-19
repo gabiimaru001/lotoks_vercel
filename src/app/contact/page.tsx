@@ -385,15 +385,10 @@ export default function ContactPage() {
       
       {/* Hero */}
       <section className="relative min-h-[40vh] flex items-center justify-center pt-24 pb-16 overflow-hidden">
-        {/* Background Image */}
         <div className="absolute inset-0">
-          <img 
-            src="/images/Contact-us.png" 
-            alt="Contact Us Background" 
-            className="w-full h-full object-cover"
-          />
+          <img src="/images/Contact-us.png" alt="Contact Us" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-navy/70" />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/40 to-navy" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/60 to-navy" />
         </div>
         
         <div className="absolute top-20 left-10 w-72 h-72 bg-gold/5 rounded-full blur-3xl" />

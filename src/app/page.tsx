@@ -61,28 +61,28 @@ const services = [
     id: "visa",
     title: "Visa Sponsorship",
     description: "Work, study, and travel visas with verified sponsors",
-    image: "https://images.unsplash.com/photo-1544016713-3a42a7caa294?w=800&h=600&fit=crop",
+    image: "/images/Visa-sponsorship.jpg",
     icon: Globe,
   },
   {
     id: "education",
     title: "Education Scholarships",
     description: "Full and partial scholarships at top universities worldwide",
-    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=600&fit=crop",
+    image: "/images/Educational-scholarship.jpg",
     icon: GraduationCap,
   },
   {
     id: "jobs",
     title: "Job Placements",
     description: "Connect with employers offering sponsorship packages",
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop",
+    image: "/images/job-placement.jpg",
     icon: Briefcase,
   },
   {
     id: "residence",
     title: "Permanent Residence",
     description: "Pathways to citizenship through investment and work",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
+    image: "/images/permanent-resident.jpg",
     icon: Home,
   },
 ];
@@ -384,7 +384,7 @@ function ServicesOverview() {
         title="Our Services"
         subtitle="Comprehensive solutions for all your global mobility needs"
         align="left"
-        light
+        lightText
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

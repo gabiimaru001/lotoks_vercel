@@ -220,7 +220,6 @@ function FeaturedSection() {
       <SectionHeading 
         title="Success Stories"
         subtitle="Real experiences from real people who transformed their lives"
-        light
       />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -257,7 +256,7 @@ function VideoTestimonials() {
               {/* Video thumbnail */}
               <div className="relative aspect-video bg-navy">
                 <img 
-                  src={`https://images.unsplash.com/photo-${index === 0 ? '1573496359142-b8d87734a5a2' : index === 1 ? '1523050854058-8df90110c9f1' : '1573497019940-1c28c88b4f3e'}?w=600&h=400&fit=crop`}
+                  src={`/images/unsplash/${index === 0 ? '1573496359142-b8d87734a5a2' : index === 1 ? '1523050854058-8df90110c9f1' : '1573497019940-1c28c88b4f3e'}-600x400.jpg`}
                   alt={testimonial.name}
                   className="w-full h-full object-cover"
                 />
@@ -402,15 +401,10 @@ export default function TestimonialsPage() {
       
       {/* Hero */}
       <section className="relative min-h-[40vh] flex items-center justify-center pt-24 pb-16 overflow-hidden">
-        {/* Background Image */}
         <div className="absolute inset-0">
-          <img 
-            src="/images/Testimonials.png" 
-            alt="Testimonials Background" 
-            className="w-full h-full object-cover"
-          />
+          <img src="/images/Testimonials.png" alt="Testimonials" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-navy/70" />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/40 to-navy" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/60 to-navy" />
         </div>
         
         {/* Decorative globe pattern */}

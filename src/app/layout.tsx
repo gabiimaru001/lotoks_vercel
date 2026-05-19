@@ -15,6 +15,11 @@ const lexend = Lexend({
 export const metadata: Metadata = {
   title: "Lotoks — Global Sponsorship Platform",
   description: "The all-in-one platform for Visa, Education, and Job sponsorships. Expertise in Motion.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({

@@ -30,13 +30,108 @@ const serviceTabs = [
   { id: "residence", label: "Residence", icon: Home },
 ];
 
+const jobListings = [
+  {
+    title: "Nurse",
+    icon: "🏥",
+    image: "/images/jobs/nurse.jpg",
+    description: "ICU, ward & community nursing roles with full sponsorship",
+    tag: "Healthcare"
+  },
+  {
+    title: "Bike Riders",
+    icon: "🛵",
+    image: "/images/jobs/bike-rider.jpg",
+    description: "Delivery and courier positions across major cities",
+    tag: "Logistics"
+  },
+  {
+    title: "Truck Drivers",
+    icon: "🚚",
+    image: "/images/jobs/truck-driver.jpg",
+    description: "Long-haul and local freight transport opportunities",
+    tag: "Transport"
+  },
+  {
+    title: "IT / Tech Professionals",
+    icon: "💻",
+    image: "/images/jobs/it-tech.jpg",
+    description: "Software, DevOps, cybersecurity and data roles",
+    tag: "Technology"
+  },
+  {
+    title: "Construction Workers",
+    icon: "🏗️",
+    image: "/images/jobs/construction.jpg",
+    description: "Site, civil and structural construction positions",
+    tag: "Construction"
+  },
+  {
+    title: "Healthcare Workers",
+    icon: "🩺",
+    image: "/images/jobs/healthcare.jpg",
+    description: "Doctors, paramedics and allied health professionals",
+    tag: "Healthcare"
+  },
+  {
+    title: "Engineers",
+    icon: "⚙️",
+    image: "/images/jobs/engineer.jpg",
+    description: "Civil, mechanical, electrical and project engineering",
+    tag: "Engineering"
+  },
+  {
+    title: "Factory Workers",
+    icon: "🏭",
+    image: "/images/jobs/factory.jpg",
+    description: "Production line and manufacturing plant roles",
+    tag: "Manufacturing"
+  },
+  {
+    title: "Warehouse Workers",
+    icon: "📦",
+    image: "/images/jobs/warehouse.jpg",
+    description: "Pick, pack, dispatch and inventory management",
+    tag: "Logistics"
+  },
+  {
+    title: "Agriculture",
+    icon: "🌾",
+    image: "/images/jobs/agriculture.jpg",
+    description: "Farming, crop management and agri-tech roles",
+    tag: "Agriculture"
+  },
+  {
+    title: "Mining & Resources",
+    icon: "⛏️",
+    image: "/images/jobs/mining.jpg",
+    description: "Underground, open-cut and resources extraction jobs",
+    tag: "Mining"
+  },
+  {
+    title: "Transport & Logistics",
+    icon: "🚢",
+    image: "/images/jobs/transport.jpg",
+    description: "Freight, shipping and supply chain coordination",
+    tag: "Transport"
+  },
+  {
+    title: "Finance & Accounting",
+    icon: "📊",
+    image: "/images/jobs/finance.jpg",
+    description: "Accounting, audit, banking and financial analyst roles",
+    tag: "Finance"
+  },
+];
+
 // Detailed service data
 const services = {
   visa: {
+    id: "visa",
     title: "Visa Sponsorship",
     subtitle: "Work, study, and travel visas with verified sponsors",
     description: "Our visa sponsorship program connects you with verified employers and organizations willing to sponsor your visa application. We streamline the entire process, making it seamless and stress-free.",
-    image: "https://images.unsplash.com/photo-1544016713-3a42a7caa294?w=800&h=600&fit=crop",
+    image: "/images/Visa-sponsorship.jpg",
     benefits: [
       "Verified sponsor network across 50+ countries",
       "Dedicated case manager for personalized support",
@@ -54,10 +149,11 @@ const services = {
     ]
   },
   education: {
+    id: "education",
     title: "Education Scholarships",
     subtitle: "Full and partial scholarships at top universities worldwide",
     description: "Access world-class education with our comprehensive scholarship matching service. We partner with universities and organizations to bring you funded opportunities that match your profile.",
-    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=600&fit=crop",
+    image: "/images/Educational-scholarship.jpg",
     benefits: [
       "Access to 1000+ scholarship programs",
       "Full and partial funding options",
@@ -75,10 +171,11 @@ const services = {
     ]
   },
   jobs: {
+    id: "jobs",
     title: "Job Placements",
     subtitle: "Connect with employers offering sponsorship packages",
     description: "Find your dream job with companies willing to sponsor your work visa. Our job matching algorithm pairs you with opportunities that align with your skills and career goals.",
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop",
+    image: "/images/job-placement.jpg",
     benefits: [
       "Exclusive job listings with sponsorship",
       "Direct hiring from top employers",
@@ -96,10 +193,11 @@ const services = {
     ]
   },
   residence: {
+    id: "residence",
     title: "Permanent Residence",
     subtitle: "Pathways to citizenship through investment and work",
     description: "Our residence and citizenship by investment programs help you obtain permanent residency or citizenship in your desired country through legitimate pathways.",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop",
+    image: "/images/permanent-resident.jpg",
     benefits: [
       "Multiple pathway options available",
       "Investment-based citizenship programs",
@@ -310,6 +408,61 @@ function ServiceDetail({ service, isActive }: { service: typeof services.visa; i
               </Button>
             </Link>
           </motion.div>
+
+          {/* Job Listings specific to Job Placements */}
+          {service.id === 'jobs' && (
+            <div className="mt-24 pt-16 border-t border-navy/10">
+              <h3 className="text-3xl font-heading font-bold text-navy mb-12 text-center">
+                Available Job Categories
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {jobListings.map((job, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.05 }}
+                    className="group"
+                  >
+                    <div className="relative h-72 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
+                      {/* Background image */}
+                      <img
+                        src={job.image}
+                        alt={job.title}
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      {/* Gradient overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-transparent" />
+
+                      {/* Tag badge */}
+                      <div className="absolute top-3 left-3">
+                        <span className="text-xs font-bold uppercase tracking-wider bg-gold text-navy px-3 py-1 rounded-full">
+                          {job.tag}
+                        </span>
+                      </div>
+
+                      {/* Icon */}
+                      <div className="absolute top-3 right-3 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center text-xl">
+                        {job.icon}
+                      </div>
+
+                      {/* Content at bottom */}
+                      <div className="absolute bottom-0 left-0 right-0 p-4">
+                        <h4 className="text-white font-bold text-base leading-tight mb-1">{job.title}</h4>
+                        <p className="text-white/70 text-xs leading-snug mb-3 line-clamp-2">{job.description}</p>
+                        <Link href="/eligibility">
+                          <span className="inline-flex items-center gap-1 text-xs font-semibold text-gold group-hover:text-white transition-colors">
+                            Apply Now <ArrowRight className="w-3 h-3" />
+                          </span>
+                        </Link>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          )}
         </motion.div>
       )}
     </AnimatePresence>
@@ -325,7 +478,7 @@ function FAQSection() {
       <SectionHeading 
         title="Frequently Asked Questions"
         subtitle="Find answers to common questions about our services"
-        light
+        lightText
       />
 
       <div className="max-w-3xl mx-auto">
@@ -386,15 +539,10 @@ export default function ServicesPage() {
       
       {/* Hero */}
       <section className="relative min-h-[40vh] flex items-center justify-center pt-24 pb-16 overflow-hidden">
-        {/* Background Image */}
         <div className="absolute inset-0">
-          <img 
-            src="/images/Ourservices-.png" 
-            alt="Our Services Background" 
-            className="w-full h-full object-cover"
-          />
+          <img src="/images/Ourservices-.png" alt="Our Services" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-navy/70" />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/40 to-navy" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/60 to-navy" />
         </div>
         
         <div className="absolute top-20 left-10 w-72 h-72 bg-gold/5 rounded-full blur-3xl" />

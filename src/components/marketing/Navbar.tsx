@@ -22,6 +22,7 @@ const servicesDropdown = [
   { href: "/services#education", label: "Education Scholarships" },
   { href: "/services#jobs", label: "Job Placements" },
   { href: "/services#residence", label: "Permanent Residence" },
+  { href: "/requirements", label: "Application Requirements" },
 ];
 
 export function Navbar() {
@@ -259,13 +260,9 @@ export function PageHero({
       {/* Background */}
       {backgroundImage ? (
         <div className="absolute inset-0">
-          <img 
-            src={backgroundImage} 
-            alt={title} 
-            className="w-full h-full object-cover"
-          />
+          <img src={backgroundImage} alt={title} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-navy/70" />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/40 to-navy" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/60 to-navy" />
         </div>
       ) : (
         <>
@@ -336,19 +333,19 @@ interface SectionHeadingProps {
   title: string;
   subtitle?: string;
   align?: 'center' | 'left';
-  light?: boolean;
+  lightText?: boolean;
 }
 
-export function SectionHeading({ title, subtitle, align = 'center', light = false }: SectionHeadingProps) {
+export function SectionHeading({ title, subtitle, align = 'center', lightText = false }: SectionHeadingProps) {
   const alignment = align === 'center' ? 'text-center' : 'text-left';
   
   return (
     <div className={`mb-12 ${alignment}`}>
-      <h2 className={`text-3xl md:text-4xl font-heading font-bold mb-4 ${light ? 'text-white' : 'text-navy'}`}>
+      <h2 className={`text-3xl md:text-4xl font-heading font-bold mb-4 ${lightText ? 'text-white' : 'text-navy'}`}>
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-lg max-w-2xl mx-auto ${light ? 'text-white/70' : 'text-navy/70'}`}>
+        <p className={`text-lg max-w-2xl mx-auto ${lightText ? 'text-white/70' : 'text-navy/70'}`}>
           {subtitle}
         </p>
       )}
