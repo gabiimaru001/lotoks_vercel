@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, ArrowLeft, RefreshCw, Sparkles } from "lucide-react";
+import { Mail, ArrowLeft, RefreshCw } from "lucide-react";
 import { useAuthStore } from "@/store/auth";
 
 export default function LoginPage() {
@@ -18,26 +18,7 @@ export default function LoginPage() {
   const [countdown, setCountdown] = useState(0);
   const otpRefs = useRef<(HTMLInputElement | null)[]>([]);
 
-  // One-click preview login
-  const handlePreviewLogin = () => {
-    login({
-      id: "preview-user",
-      name: "Preview User",
-      email: "preview@lotoks.com",
-      role: "user",
-    });
-    router.push("/dashboard");
-  };
 
-  const handleAdminPreview = () => {
-    login({
-      id: "preview-admin",
-      name: "Preview Admin",
-      email: "admin@lotoks.com",
-      role: "admin",
-    });
-    router.push("/admin/queue");
-  };
 
   const handleEmailSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -150,26 +131,7 @@ export default function LoginPage() {
                 </p>
               </form>
 
-              {/* Preview Login Buttons */}
-              <div className="mt-8 pt-8 border-t border-outline-variant/20">
-                <p className="text-[10px] text-center text-outline-variant font-bold uppercase tracking-widest mb-4">Preview Mode - No Authentication Required</p>
-                <div className="flex flex-col gap-3">
-                  <button 
-                    onClick={handlePreviewLogin}
-                    className="w-full py-3 rounded-xl bg-tertiary/10 text-tertiary font-bold text-sm hover:bg-tertiary/20 transition-all flex items-center justify-center gap-2"
-                  >
-                    <Sparkles size={16} />
-                    Preview User Dashboard
-                  </button>
-                  <button 
-                    onClick={handleAdminPreview}
-                    className="w-full py-3 rounded-xl bg-primary/10 text-primary font-bold text-sm hover:bg-primary/20 transition-all flex items-center justify-center gap-2"
-                  >
-                    <Sparkles size={16} />
-                    Preview Admin Panel
-                  </button>
-                </div>
-              </div>
+
             </motion.div>
           ) : (
             <motion.div
