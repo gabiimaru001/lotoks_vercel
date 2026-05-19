@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Lexend } from "next/font/google";
 import "./globals.css";
+import SupportSystem from "@/components/support/SupportSystem";
 
 const inter = Inter({
   variable: "--font-body",
@@ -62,6 +63,7 @@ export default function RootLayout({
         {/* Spacer so page content isn't hidden behind the banner */}
         <div style={{ height: "37px", flexShrink: 0 }} />
         {children}
+        <SupportSystem />
       </body>
     </html>
   );
