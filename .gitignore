@@ -2,6 +2,14 @@
 
 # dependencies
 /node_modules
+**/node_modules
+
+# vite build output
+vite/client/dist
+vite/client/src_next
+
+# vite tsbuildinfo
+vite/client/*.tsbuildinfo
 /.pnp
 .pnp.*
 .yarn/*
